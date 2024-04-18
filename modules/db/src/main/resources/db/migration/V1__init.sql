@@ -6,24 +6,29 @@ SET SCHEMA 'app';
 
 CREATE TABLE roles
 (
-    id          SERIAL PRIMARY KEY,
+    id          TEXT NOT NULL PRIMARY KEY,
     description TEXT NOT NULL
 );
 
 CREATE TABLE users
 (
-    user_id  SERIAL PRIMARY KEY,
+    id       SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password TEXT        NOT NULL,
     email    TEXT UNIQUE NOT NULL,
     role_id  INTEGER REFERENCES roles (id)
 );
 
-CREATE TABLE waste_item
+CREATE TABLE waste_type
+(
+    id          TEXT NOT NULL,
+    description TEXT NOT NULL
+);
+
+CREATE TABLE waste
 (
     id           SERIAL PRIMARY KEY,
-    user_id      INTEGER REFERENCES users (user_id),
-    waste_type   TEXT           NOT NULL,
+    type         TEXT           NOT NULL REFERENCES waste_type (id),
     weight       DECIMAL(10, 2) NOT NULL,
     date_created DATE           NOT NULL DEFAULT CURRENT_DATE,
     status       TEXT           NOT NULL
@@ -32,25 +37,25 @@ CREATE TABLE waste_item
 CREATE TABLE recycling_bin
 (
     id            SERIAL PRIMARY KEY,
-    location_name text          NOT NULL,
+    location_name TEXT          NOT NULL,
     latitude      DECIMAL(9, 6) NOT NULL,
     longitude     DECIMAL(9, 6) NOT NULL,
-    type          TEXT          NOT NULL
+    type          TEXT          NOT NULL REFERENCES waste_type (id)
 );
 
 CREATE TABLE pickup_schedule
 (
     id             SERIAL PRIMARY KEY,
-    user_id        INTEGER REFERENCES users (user_id),
+    user_id        INTEGER REFERENCES users (id),
     recycle_bin_id INTEGER REFERENCES recycling_bin (id),
-    pickup_date    DATE        NOT NULL,
-    status         VARCHAR(50) NOT NULL
+    pickup_date    DATE NOT NULL,
+    status         TEXT NOT NULL
 );
 
 CREATE TABLE analytics_data
 (
     id              SERIAL PRIMARY KEY,
-    user_id         INTEGER REFERENCES users (user_id),
+    user_id         INTEGER REFERENCES users (id),
     waste_type      TEXT           NOT NULL,
     total_weight    DECIMAL(10, 2) NOT NULL,
     recycled_weight DECIMAL(10, 2) NOT NULL,
@@ -60,6 +65,6 @@ CREATE TABLE analytics_data
 CREATE TABLE user_roles
 (
     id      SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users (user_id),
+    user_id INTEGER REFERENCES users (id),
     role_id INTEGER REFERENCES roles (id)
 );
