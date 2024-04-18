@@ -1,0 +1,16 @@
+# PostgreSQL datasource configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+  flyway:
+    enabled: true
+    locations: classpath:/db/migration
+    baselineOnMigrate: true
+    validateOnMigrate: true
+    fail-on-missing-locations: true
+    validate-migration-naming: true
+    user: postgres
+    password: password
+    url: jdbc:postgresql://localhost:5432/postgres
