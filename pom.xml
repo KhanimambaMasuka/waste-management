@@ -27,6 +27,10 @@
         <flyway-core.version>10.11.0</flyway-core.version>
         <flyway-database-postgresql.version>10.11.0</flyway-database-postgresql.version>
         <spring-data-jpa.version>3.2.5</spring-data-jpa.version>
+        <jjwt-api.version>0.12.3</jjwt-api.version>
+        <jjwt-impl.version>0.12.3</jjwt-impl.version>
+        <jjwt-jackson.version>0.12.3</jjwt-jackson.version>
+        <spring-security-core.version>6.2.4</spring-security-core.version>
     </properties>
 
     <dependencyManagement>
@@ -42,6 +46,27 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-database-postgresql</artifactId>
                 <version>${flyway-database-postgresql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt-impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>${jjwt-jackson.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security-core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

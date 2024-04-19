@@ -1,4 +1,4 @@
-package com.enviro.assessment.inter001.khanimamba_masuka;
+package com.enviro.assessment.inter001.khanimamba_masuka.app;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

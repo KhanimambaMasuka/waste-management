@@ -16,12 +16,12 @@ CREATE TABLE users
     username TEXT UNIQUE NOT NULL,
     password TEXT        NOT NULL,
     email    TEXT UNIQUE NOT NULL,
-    role_id  INTEGER REFERENCES roles (id)
+    role_id  TEXT REFERENCES roles (id)
 );
 
 CREATE TABLE waste_type
 (
-    id          TEXT NOT NULL,
+    id          TEXT PRIMARY KEY NOT NULL,
     description TEXT NOT NULL
 );
 
@@ -66,5 +66,5 @@ CREATE TABLE user_roles
 (
     id      SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users (id),
-    role_id INTEGER REFERENCES roles (id)
+    role_id TEXT REFERENCES roles (id)
 );

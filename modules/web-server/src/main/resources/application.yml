@@ -14,3 +14,8 @@ spring:
     user: postgres
     password: password
     url: jdbc:postgresql://localhost:5432/postgres
+
+security:
+  jwt:
+    secret-key: 6f919b6e0aeca2f59ff2665115ac63906b8aeb32635afd86566b118b3d840f5a
+    expiration-time: 3600000
