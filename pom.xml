@@ -10,7 +10,7 @@
         <version>3.2.4</version>
     </parent>
 
-    <groupId>com.enviro.assessment.inter001.khanimamba_masuka</groupId>
+    <groupId>com.enviro.assessment.inter001.khanimambamasuka</groupId>
     <artifactId>waste_management</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
