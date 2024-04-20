@@ -13,7 +13,7 @@ CREATE TABLE roles
 CREATE TABLE users
 (
     id       SERIAL PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
+    full_name TEXT UNIQUE NOT NULL,
     password TEXT        NOT NULL,
     email    TEXT UNIQUE NOT NULL,
     role_id  TEXT REFERENCES roles (id)
