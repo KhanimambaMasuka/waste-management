@@ -47,7 +47,6 @@ CREATE TABLE pickup_schedule
 (
     id             SERIAL PRIMARY KEY,
     user_id        INTEGER REFERENCES users (id),
-    recycle_bin_id INTEGER REFERENCES recycling_bin (id),
     pickup_date    DATE NOT NULL,
     status         TEXT NOT NULL
 );

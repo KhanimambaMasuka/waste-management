@@ -1,22 +1,23 @@
-package com.enviro.assessment.inter001.khanimambamasuka;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+package com.enviro.assessment.inter001.khanimambamasuka.dto;
 
 import java.io.Serial;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "pickup_schedule")
-public class PickupSchedule extends MutableEntity {
+public class PickupScheduleDTO extends DTO{
     @Serial
-    private static final long serialVersionUID = -8682923906402042637L;
-    @Column(name = "user_id")
+    private static final long serialVersionUID = 6738519974723746023L;
+    private Long id;
     private String userId;
-    @Column(name = "pickup_date")
     private LocalDateTime pickupDate;
     private String status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUserId() {
         return userId;

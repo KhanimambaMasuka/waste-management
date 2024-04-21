@@ -9,7 +9,6 @@ public class UserDTO extends DTO {
 
     private Long id;
     private String fullName;
-    private String password;
     private String email;
 
     public Long getId() {
@@ -26,14 +25,6 @@ public class UserDTO extends DTO {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
