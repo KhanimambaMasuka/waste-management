@@ -9,7 +9,7 @@ import {
 } from "@angular/material/sidenav";
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatIcon} from "@angular/material/icon";
-import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {MatLine} from "@angular/material/core";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatIconButton} from "@angular/material/button";
@@ -44,7 +44,7 @@ export class LayoutComponent {
   sidenav!: MatSidenav;
   isMobile = true;
 
-  constructor(private observer: BreakpointObserver) {
+  constructor(private observer: BreakpointObserver,private router: Router ) {
   }
 
   ngOnInit() {
@@ -55,6 +55,10 @@ export class LayoutComponent {
 
   toggleMenu() {
     this.sidenav.toggle();
+  }
+  handleLogout() {
+   localStorage.setItem("token", "");
+    this.router.navigate(['login'])
   }
 
   protected readonly open = open;

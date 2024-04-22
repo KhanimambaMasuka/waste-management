@@ -13,6 +13,7 @@ import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {CommonModule, DatePipe} from "@angular/common";
 import {ScheduleService} from "../../service/schedule.service";
 import {MatSort, MatSortModule} from "@angular/material/sort";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-schedule',
@@ -31,7 +32,8 @@ import {MatSort, MatSortModule} from "@angular/material/sort";
     MatColumnDef,
     MatSort,
     MatSortModule,
-    CommonModule
+    CommonModule,
+    MatButton
   ],
   styleUrls: ['./pickup-schedule.component.css']
 })

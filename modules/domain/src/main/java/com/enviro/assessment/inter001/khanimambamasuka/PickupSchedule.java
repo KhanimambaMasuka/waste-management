@@ -13,16 +13,16 @@ public class PickupSchedule extends MutableEntity {
     @Serial
     private static final long serialVersionUID = -8682923906402042637L;
     @Column(name = "user_id")
-    private String userId;
+    private Long userId;
     @Column(name = "pickup_date")
     private LocalDateTime pickupDate;
     private String status;
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
